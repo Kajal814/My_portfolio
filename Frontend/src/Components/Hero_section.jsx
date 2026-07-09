@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
-import {
-  FolderKanban,
-  BriefcaseBusiness,
-  Trophy,
-  BadgeCheck,
-} from "lucide-react";
-
 import {
   FaReact,
   FaNodeJs,
   FaHtml5,
   FaCss3Alt,
+  FaGithub,
   FaGitAlt,
   FaJava,
+  FaDocker,
+  FaTerminal,
+  FaLaptopCode,
+  FaProjectDiagram,
+  FaCode,
+  FaBriefcase
+
 } from "react-icons/fa";
 
-import { SiJavascript, SiMongodb } from "react-icons/si";
+import {
+  SiJavascript,
+  SiTailwindcss,
+  SiMongodb,
+  SiExpress,
+ 
+} from "react-icons/si";
 
 function Hero() {
   const roles = [
@@ -52,212 +58,443 @@ function Hero() {
 
   return (
     <motion.div
-      className="flex gap-2 h-screen bg-gradient-to-br from-[#020617] via-[#0b1120] to-[#111827] scroll-smooth"
+
+      className="
+      relative
+      flex
+      gap-12
+      h-screen
+      bg-gradient-to-br
+      from-[#020617]
+      via-[#0b1120]
+      to-[#111827]
+      scroll-smooth
+      overflow-hidden
+      "
+
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
+
     >
+
+
+
+<div
+className="
+absolute
+top-0
+left-0
+h-96
+w-96
+rounded-full
+bg-cyan-500/10
+blur-[140px]
+"
+/>
+
+<div
+className="
+absolute
+bottom-0
+right-0
+h-[450px]
+w-[450px]
+rounded-full
+bg-purple-500/10
+blur-[150px]
+"
+/>
+
+
       {/* LEFT SECTION */}
 
       <motion.div
+
         className="w-[50%] flex justify-end items-center mr-6"
+
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
+
       >
+
         <div className="gap-2 flex flex-col">
-          <p className="text-blue-500 font-bold">
-            FINAL YEAR TECH STUDENT
-          </p>
+
+          <div
+className="
+inline-flex
+items-center
+w-fit
+gap-2
+rounded-full
+border
+border-cyan-400/20
+bg-cyan-500/10
+px-4
+py-2
+text-sm
+font-medium
+text-cyan-300
+">
+
+<div className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></div>
+
+Final Year Tech Student
+
+</div>
 
           <motion.h1
-            className="text-5xl font-bold font-sans text-white"
+
+   className="
+text-6xl
+lg:text-7xl
+leading-tight
+tracking-tight
+text-white
+font-bold
+font-sans
+transition-all
+duration-300
+drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]
+hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.4)]
+"
+
             whileHover={{
               scale: 1.05,
-              textShadow: "0px 0px 20px #6366f1",
+              textShadow: "0px 0px 20px #6366f1"
             }}
+
           >
+
             Kajal Yadav
+
           </motion.h1>
 
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-400 text-lg max-w-md leading-7">
             Aspiring Software Developer
           </p>
 
-          <motion.p className="text-blue-300 text-xl font-bold flex items-center">
+          <motion.p
+
+            className="
+            text-blue-300
+            text-xl
+            font-bold
+            flex
+            items-center
+            "
+
+          >
+
             {text}
-            <span className="animate-pulse text-white ml-1">|</span>
+
+            <span
+className="
+ml-2
+inline-block
+h-6
+w-[3px]
+bg-cyan-400
+animate-pulse
+rounded-full
+"
+/>
+
           </motion.p>
 
-          <div className="flex gap-5 mt-3">
+          <div className="flex gap-4 mt-3">
+
             <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="bg-gradient-to-r from-purple-500/80 via-indigo-500/70 to-blue-400/80 px-6 py-2 rounded text-white"
+
+              whileHover={{
+                scale: 1.1
+              }}
+
+              whileTap={{
+                scale: 0.9
+              }}
+
+              className="
+              bg-gradient-to-r
+              from-purple-500/80
+              via-indigo-500/70
+              to-blue-400/80
+              px-6
+              py-2
+              rounded
+              text-white
+              rounded-xl
+font-medium
+shadow-lg
+hover:shadow-cyan-500/30
+transition-all
+duration-300
+              "
+
             >
+
               Projects
+
             </motion.button>
 
             <motion.button
-              whileHover={{ scale: 1.1 }}
-              className="text-gray-400 px-6 py-2 rounded border border-gray-500 shadow-lg"
+
+              whileHover={{
+                scale: 1.1
+              }}
+
+              className="
+              text-gray-400
+              px-6
+              py-2
+              rounded
+              border
+              border-gray-500
+              shadow-lg
+              rounded-xl
+border-white/10
+bg-white/5
+hover:bg-white/10
+hover:border-cyan-400/30
+              "
+
             >
+
               Download Resume
+
             </motion.button>
+
           </div>
+
         </div>
+
       </motion.div>
 
       {/* RIGHT SECTION */}
 
       <motion.div
-        className="w-[50%] relative flex flex-col justify-center pl-2"
+
+        className="
+        relative
+        w-[60%]
+        flex
+        gap-6
+        flex-col
+        justify-center
+        pl-2 
+        "
+
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
+
       >
-        {/* Floating Tech Icons */}
 
+       
+ 
+      
+        {/* floating box */}
+<div
+className="
+absolute
+top-24
+left-6
+h-48
+w-48
+rounded-full
+bg-cyan-500
+opacity-20
+blur-[90px]
+"
+/>
+
+<div
+className="
+absolute
+bottom-10
+right-24
+h-52
+w-52
+rounded-full
+bg-purple-500
+opacity-20
+blur-[100px]
+"
+/>
         <motion.div
-          className="absolute top-20 left-8 bg-white/10 backdrop-blur-lg p-4 rounded-2xl border border-white/10 text-cyan-400"
-          animate={{ y: [0, -15, 0] }}
-          transition={{ repeat: Infinity, duration: 3 }}
-          whileHover={{ scale: 1.15 }}
+
+          className="
+          h-40
+          w-40
+          hover:shadow-cyan-500/20
+          rounded-3xl
+          bg-gradient-to-br
+          from-purple-600/50
+          via-blue-600/40
+          to-cyan-500/30
+          border
+          border-white/10
+          backdrop-blur-lg
+          shadow-xl
+          flex
+          items-center
+          justify-center
+          "
+
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 5, -5, 0],
+            scale: [1, 1.05, 1]
+          }}
+
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+
         >
-          <FaReact size={32} />
-        </motion.div>
 
-        <motion.div
-          className="absolute top-10 right-28 bg-white/10 backdrop-blur-lg p-4 rounded-2xl border border-white/10 text-green-500"
-          animate={{ y: [0, 15, 0] }}
-          transition={{ repeat: Infinity, duration: 4 }}
-          whileHover={{ scale: 1.15 }}
-        >
-          <FaNodeJs size={30} />
-        </motion.div>
+          <div className="flex flex-col items-center">
 
-        <motion.div
-          className="absolute top-56 left-0 bg-white/10 backdrop-blur-lg p-3 rounded-xl border border-white/10 text-yellow-400"
-          animate={{ y: [0, -10, 0] }}
-          transition={{ repeat: Infinity, duration: 3.5 }}
-          whileHover={{ scale: 1.15 }}
-        >
-          <SiJavascript size={28} />
-        </motion.div>
+<FaLaptopCode className="text-white text-5xl"/>
 
-        <motion.div
-          className="absolute top-60 right-16 bg-white/10 backdrop-blur-lg p-3 rounded-xl border border-white/10 text-green-400"
-          animate={{ y: [0, 12, 0] }}
-          transition={{ repeat: Infinity, duration: 3 }}
-          whileHover={{ scale: 1.15 }}
-        >
-          <SiMongodb size={28} />
-        </motion.div>
 
-        <motion.div
-          className="absolute bottom-48 left-12 bg-white/10 backdrop-blur-lg p-3 rounded-xl border border-white/10 text-orange-500"
-          animate={{ y: [0, -12, 0] }}
-          transition={{ repeat: Infinity, duration: 4 }}
-          whileHover={{ scale: 1.15 }}
-        >
-          <FaHtml5 size={28} />
-        </motion.div>
 
-        <motion.div
-          className="absolute bottom-48 right-32 bg-white/10 backdrop-blur-lg p-3 rounded-xl border border-white/10 text-blue-500"
-          animate={{ y: [0, 12, 0] }}
-          transition={{ repeat: Infinity, duration: 3 }}
-          whileHover={{ scale: 1.15 }}
-        >
-          <FaCss3Alt size={28} />
-        </motion.div>
+</div>
 
-        <motion.div
-          className="absolute bottom-20 left-32 bg-white/10 backdrop-blur-lg p-3 rounded-xl border border-white/10 text-red-500"
-          animate={{ y: [0, -12, 0] }}
-          transition={{ repeat: Infinity, duration: 3.5 }}
-          whileHover={{ scale: 1.15 }}
-        >
-          <FaGitAlt size={28} />
-        </motion.div>
+        </motion.div >
 
-        <motion.div
-          className="absolute bottom-20 right-16 bg-white/10 backdrop-blur-lg p-3 rounded-xl border border-white/10 text-orange-400"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 3 }}
-          whileHover={{ scale: 1.15 }}
-        >
-          <FaJava size={28} />
-        </motion.div>
-
-        {/* Availability Badge */}
-
-        <motion.div
-          className="inline-flex w-fit items-center gap-2 px-4 py-2 rounded-full bg-green-500/20 border border-green-500/30 text-green-300 mb-5"
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <BadgeCheck size={18} />
-          Available for Internship
-        </motion.div>
-
-        <h2 className="text-white font-bold text-xl">
-          Hi — I build performant web apps
+        <h2 className="text-white font-bold text-2xl">
+        Transforming Ideas Into Digital Experiences
         </h2>
 
-        <p className="text-gray-400 text-sm mr-48 mt-3">
-          Passionate Full Stack Developer focused on building responsive,
-          scalable and user-friendly web applications using modern
-          technologies.
+        <p
+className="
+max-w-lg
+text-gray-400
+leading-8
+text-base
+"
+>
+Full-stack developer passionate about building scalable web applications, solving algorithmic challenges, and exploring AI-powered innovation.
+
         </p>
-                <div className="flex gap-4 mt-8">
+
+        <div className="flex gap-3 text-gray-200 font-bold">
 
           <motion.div
-            whileHover={{ scale: 1.08 }}
-            className="bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl px-5 py-4 w-40 shadow-xl"
+            whileHover={{ scale: 1.08, y: -4 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+         className="
+relative
+overflow-hidden
+bg-white/5
+backdrop-blur-xl
+border
+border-white/10
+rounded-2xl
+px-5
+py-5
+flex
+flex-col
+items-center
+gap-2
+min-w-[130px]
+hover:border-cyan-400/40
+hover:shadow-[0_0_25px_rgba(34,211,238,0.18)]
+transition-all
+duration-300
+"
           >
-            <FolderKanban className="text-cyan-400 mb-2" size={28} />
-
-            <h3 className="text-white text-xl font-bold">
-              12+
-            </h3>
-
-            <p className="text-gray-300 text-sm">
-              Projects Completed
-            </p>
-
+            <div className="h-9 w-9 rounded-full bg-blue-400/10 border border-blue-400/20 flex items-center justify-center">
+              <FaProjectDiagram className="text-blue-400 text-base" />
+            </div>
+           <span className="text-2xl font-bold text-white">
+6+
+</span>
+            <span className="text-gray-400 text-sm font-medium">
+Projects
+</span>
           </motion.div>
 
           <motion.div
-            whileHover={{ scale: 1.08 }}
-            className="bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl px-5 py-4 w-40 shadow-xl"
+            whileHover={{ scale: 1.08, y: -4 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+             className="
+relative
+overflow-hidden
+bg-white/5
+backdrop-blur-xl
+border
+border-white/10
+rounded-2xl
+px-5
+py-5
+flex
+flex-col
+items-center
+gap-2
+min-w-[130px]
+hover:border-cyan-400/40
+hover:shadow-[0_0_25px_rgba(34,211,238,0.18)]
+transition-all
+duration-300
+"
           >
-            <BriefcaseBusiness className="text-green-400 mb-2" size={28} />
+          <div className="h-10 w-10 rounded-full bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
+  <FaCode className="text-purple-300 text-base" />
+</div>
 
-            <h3 className="text-white text-xl font-bold">
-              2
-            </h3>
+<span className="text-2xl font-bold text-white">
+  50+
+</span>
 
-            <p className="text-gray-300 text-sm">
-              Internships
-            </p>
-
+<span className="text-gray-400 text-xs uppercase tracking-wider">
+  DSA Problems
+</span>
           </motion.div>
 
           <motion.div
-            whileHover={{ scale: 1.08 }}
-            className="bg-white/10 backdrop-blur-lg border border-white/10 rounded-2xl px-5 py-4 w-40 shadow-xl"
+            whileHover={{ scale: 1.08, y: -4 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+             className="
+relative
+overflow-hidden
+bg-white/5
+backdrop-blur-xl
+border
+border-white/10
+rounded-2xl
+px-5
+py-5
+flex
+flex-col
+items-center
+gap-2
+min-w-[130px]
+hover:border-cyan-400/40
+hover:shadow-[0_0_25px_rgba(34,211,238,0.18)]
+transition-all
+duration-300
+"
           >
-            <Trophy className="text-yellow-400 mb-2" size={28} />
+ <div className="h-9 w-9 rounded-full bg-blue-400/10 border border-blue-400/20 flex items-center justify-center">
+  <FaBriefcase className="text-blue-400 text-base" />
+</div>
 
-            <h3 className="text-white text-xl font-bold">
-              200+
-            </h3>
+<span className="text-lg font-bold">2</span>
 
-            <p className="text-gray-300 text-sm">
-              DSA Problems
-            </p>
-
+<span className="text-gray-400 text-xs uppercase tracking-wider">
+  Internships
+</span>
           </motion.div>
 
         </div>

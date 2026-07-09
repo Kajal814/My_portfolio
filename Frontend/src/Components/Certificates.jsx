@@ -1,6 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCertificate } from "react-icons/fa";
+import {
+  FaReact,
+  FaRobot,
+ FaCogs 
+} from "react-icons/fa";
+
 
 
 function Certificates() {
@@ -8,23 +13,25 @@ function Certificates() {
 
 const certificates = [
 
-{
-title:"Full Stack Development",
-issuer:"Online Platform",
-year:"2025"
-},
+ {
+    title: "MERN Stack Development",
+    issuer: "Professional Training",
+    year: "2026",
+    icon: <FaReact />,
+  },
+  {
+    title: "Generative AI",
+    issuer: "Internship Program",
+    year: "2026",
+    icon: <FaRobot />,
+  },
 
 {
-title:"AI & Machine Learning",
-issuer:"Online Platform",
-year:"2025"
+title:" Machine Learning",
+issuer:"SimpliLearn",
+year:"2025",
+icon:<FaCogs />
 },
-
-{
-title:"Java Programming",
-issuer:"Online Platform",
-year:"2024"
-}
 
 
 ];
@@ -73,28 +80,32 @@ className="flex flex-col gap-5"
 
 >
 
-
-<h2 className="
-text-white
-font-bold
+<h2
+className="
 text-3xl
-">
-
+md:text-4xl
+font-bold
+text-white
+relative
+inline-block
+pb-2
+after:absolute
+after:left-0
+after:bottom-0
+after:h-[3px]
+after:w-14
+after:rounded-full
+after:bg-gradient-to-r
+after:from-purple-500
+after:to-cyan-400
+"
+>
 Certificates
-
 </h2>
 
-
-
-<p className="
-text-gray-400
-text-sm
-max-w-xl
-">
-
-Certifications that represent my learning
-and technical growth.
-
+<p className="mt-2 max-w-2xl text-lg leading-8 text-gray-400">
+  Certifications that reflect my commitment to continuous learning,
+  technical excellence, and professional development.
 </p>
 
 
@@ -159,23 +170,26 @@ scale:1.05,
 y:-8
 }}
 
-
-
-
 className="
+group
+relative
+overflow-hidden
 border
 border-white/10
-text-white
+rounded-3xl
+bg-white/[0.04]
+backdrop-blur-2xl
 p-6
-rounded-2xl
-bg-white/5
-backdrop-blur-xl
-shadow-xl
+text-white
+shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+transition-all
+duration-500
+hover:-translate-y-2
+hover:border-cyan-400/30
+hover:shadow-cyan-500/10
 flex
 flex-col
 gap-4
-hover:border-blue-500/40
-transition
 "
 
 >
@@ -184,26 +198,27 @@ transition
 
 
 
-
-
-<div className="
-h-14
-w-14
+<div
+className="
+h-16
+w-16
 rounded-full
-bg-gradient-to-r
-from-purple-500
-to-blue-500
+border
+border-cyan-400/20
+bg-cyan-500/10
+backdrop-blur-xl
 flex
 items-center
 justify-center
-text-white
-text-xl
-">
-
-
-<FaCertificate/>
-
-
+text-cyan-300
+text-3xl
+transition-all
+duration-300
+group-hover:rotate-12
+group-hover:scale-110
+"
+>
+  {certificate.icon}
 </div>
 
 
@@ -213,9 +228,10 @@ text-xl
 
 
 <h3 className="
+
+text-white
+font-semibold
 text-xl
-font-bold
-text-blue-300
 ">
 
 
@@ -228,33 +244,35 @@ text-blue-300
 
 
 
+<div className="flex flex-wrap gap-2 mt-2">
 
+  <span className="
+  px-3
+  py-1
+  rounded-full
+  bg-cyan-500/10
+  border
+  border-cyan-400/20
+  text-cyan-300
+  text-xs
+  ">
+    {certificate.issuer}
+  </span>
 
-<p className="
-text-gray-400
-text-sm
-">
+  <span className="
+  px-3
+  py-1
+  rounded-full
+  bg-white/5
+  border
+  border-white/10
+  text-gray-300
+  text-xs
+  ">
+    {certificate.year}
+  </span>
 
-
-Issued by: {certificate.issuer}
-
-
-</p>
-
-
-
-
-
-<p className="
-text-gray-500
-text-sm
-">
-
-
-Year: {certificate.year}
-
-
-</p>
+</div>
 
 
 

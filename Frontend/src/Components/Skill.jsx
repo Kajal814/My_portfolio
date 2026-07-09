@@ -68,19 +68,34 @@ function Skill() {
         transition={{duration:0.6}}
 
         className="flex flex-col gap-5">
+        
+<h2
+  className="
+    text-3xl
+    md:text-4xl
+    font-bold
+    text-white
+    inline-block
+    relative
+    pb-2
+    after:absolute
+    after:left-0
+    after:bottom-0
+    after:h-[3px]
+    after:w-14
+    after:rounded-full
+    after:bg-gradient-to-r
+    after:from-purple-500
+    after:to-cyan-400
+  "
+>
+  Skills
+</h2>
 
-          <h2 className="
-          text-white
-          font-bold
-          text-2xl
-          ">
-            Skills
-          </h2>
-
-
-          <p className="text-gray-400 text-sm">
-            Technologies and tools I use to build modern web applications.
-          </p>
+<p className="text-gray-400 max-w-2xl text-lg leading-8 mt-2">
+  Technologies and tools I use to build modern, scalable and
+  high-performance web applications.
+</p>
 
 
         </motion.div>
@@ -91,10 +106,11 @@ function Skill() {
         {/* cards */}
 
         <div className="
-        grid
-        grid-cols-2
-        gap-5
-        ">
+grid
+grid-cols-1
+md:grid-cols-2
+gap-5
+">
 
 
         {skills.map((skill,index)=>(
@@ -107,34 +123,54 @@ function Skill() {
           initial={{opacity:0,scale:0.9}}
           whileInView={{opacity:1,scale:1}}
           transition={{
-            duration:0.5,
-            delay:index*0.2
-          }}
-
+  duration: 1.2,
+  ease: "easeOut"
+}}
           whileHover={{
-            y:-8
-          }}
+  scale: 1.02,
+  y: -6,
+}}
 
 
-          className="
-          border
-          border-white/10
-          text-white
-          p-6
-          rounded-xl
-          bg-white/5
-          backdrop-blur-lg
-          shadow-xl
-          "
+         className="
+group
+relative
+overflow-hidden
+rounded-3xl
+border
+border-white/10
+bg-white/[0.04]
+backdrop-blur-2xl
+p-6
+text-white
+shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+transition-all
+duration-500
+hover:border-cyan-400/30
+hover:shadow-cyan-500/20
+"
 
           >
+            <div
+  className="
+    absolute
+    w-32
+    h-32
+    bg-purple-500
+    rounded-full
+    blur-3xl
+    opacity-20
+    right-0
+    top-0
+  "
+></div>
 
-
-          <h3 className="
-          text-xl
-          font-semibold
-          mb-5
-          ">
+<h3 className="
+relative
+text-xl
+font-semibold
+mb-5
+">
             {skill.title}
           </h3>
 
@@ -144,7 +180,12 @@ function Skill() {
             skill.items.map((item,i)=>(
 
 
-              <div key={i} className="mb-4">
+ <h3 className="
+relative
+text-xl
+font-semibold
+mb-5
+">
 
 
                 <div className="
@@ -154,7 +195,13 @@ function Skill() {
                 mb-1
                 ">
 
-                  <p>{item[0]}</p>
+                 <div className="flex items-center gap-2">
+
+<div className="w-2 h-2 rounded-full bg-cyan-400"></div>
+
+<p>{item[0]}</p>
+
+</div>
 
                   <p className="text-gray-400">
                     {item[1]}
@@ -183,15 +230,15 @@ function Skill() {
                   duration:1
                 }}
 
-                className="
-                h-2
-                rounded-full
-                bg-gradient-to-r
-                from-purple-500
-                via-indigo-500
-                to-blue-400
-                "
-
+               className="
+h-2
+rounded-full
+bg-gradient-to-r
+from-purple-500
+via-cyan-400
+to-blue-500
+shadow-[0_0_15px_rgba(34,211,238,0.5)]
+"
                 />
 
 
@@ -199,7 +246,7 @@ function Skill() {
 
 
 
-              </div>
+              </h3>
 
 
             ))

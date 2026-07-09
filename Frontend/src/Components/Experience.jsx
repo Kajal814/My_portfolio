@@ -6,19 +6,18 @@ function Experience() {
 
 
 const experiences = [
-  {
-    role:"Full Stack Developer Intern",
-    company:"Tech Internship",
-    time:"2025",
-    desc:"Worked on frontend development, backend APIs and building responsive web applications using modern technologies."
+   {
+    role: "Generative AI Intern",
+    company: "EI Systems Technologies",
+    time: "June 2026 - Present",
+    desc: "Worked on AI-driven projects using Large Language Models (LLMs), prompt engineering, and modern AI tools to develop intelligent applications and automate real-world tasks."
   },
 
-
   {
-    role:"Frontend Developer",
-    company:"Personal Projects",
-    time:"2024 - Present",
-    desc:"Created interactive UI components, portfolio websites and improved skills in React, Tailwind CSS and JavaScript."
+    role: "MERN Stack Trainee",
+    company: "Substring Technologies",
+    time: "March 2026 - May 2026",
+    desc: "Completed hands-on training in the MERN stack by building responsive full-stack web applications using MongoDB, Express.js, React, and Node.js while strengthening API development and database management."
   }
 ];
 
@@ -62,28 +61,34 @@ className="flex flex-col gap-5"
 
 >
 
-
-<h2 className="
-text-white
-font-bold
-text-3xl
-">
-
-Experience
-
+<h2
+  className="
+    text-3xl
+    md:text-4xl
+    font-bold
+    text-white
+    inline-block
+    relative
+    pb-2
+    after:absolute
+    after:left-0
+    after:bottom-0
+    after:h-[3px]
+    after:w-14
+    after:rounded-full
+    after:bg-gradient-to-r
+    after:from-purple-500
+    after:to-cyan-400
+  "
+>
+  Experience
 </h2>
 
 
 
-<p className="
-text-gray-400
-text-sm
-max-w-xl
-">
-
-My journey of learning, building projects and
-gaining practical development experience.
-
+<p className="text-gray-400 max-w-2xl text-lg leading-8 mt-2">
+  My journey of gaining practical experience through internships,
+  professional training, and hands-on development projects.
 </p>
 
 
@@ -99,32 +104,8 @@ gaining practical development experience.
 {/* Timeline */}
 
 
-<div className="
-flex
-flex-col
-gap-6
-relative
-">
 
-
-
-<div className="
-absolute
-left-[7px]
-top-3
-h-full
-w-[2px]
-bg-gradient-to-b
-from-purple-500
-to-blue-500
-">
-
-</div>
-
-
-
-
-
+<div className="flex flex-col gap-6 mt-8">
 
 
 {
@@ -187,29 +168,50 @@ viewport={{once:true}}
 
 
 whileHover={{
-scale:1.02
+  scale:1.02,
+  y:-6
 }}
 
 
 className="
+group
+relative
+overflow-hidden
+w-full
+rounded-3xl
 border
 border-white/10
-w-full
+bg-white/[0.04]
+backdrop-blur-2xl
+p-7
 text-white
-p-6
-rounded-2xl
-bg-white/5
-backdrop-blur-lg
-shadow-xl
+shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+transition-all
+duration-500
+hover:-translate-y-2
+hover:border-cyan-400/30
+hover:shadow-cyan-500/10
 flex
 flex-col
-gap-3
+gap-4
 "
 
 
 >
 
-
+<div
+  className="
+    absolute
+    w-32
+    h-32
+    bg-purple-500
+    rounded-full
+    blur-3xl
+    opacity-20
+    right-0
+    top-0
+  "
+></div>
 
 <div className="
 flex
@@ -217,11 +219,10 @@ justify-between
 flex-wrap
 ">
 
-
 <h3 className="
-text-xl
-font-bold
-text-blue-300
+text-2xl
+font-semibold
+text-white
 ">
 
 {exp.role}
@@ -230,8 +231,14 @@ text-blue-300
 
 
 <span className="
-text-gray-400
-text-sm
+rounded-full
+border
+border-white/10
+bg-white/5
+px-3
+py-1
+text-xs
+text-gray-300
 ">
 
 {exp.time}
@@ -243,23 +250,28 @@ text-sm
 
 
 
-
-<p className="
-text-white
-font-semibold
-">
-
-{exp.company}
-
-</p>
-
-
-
-
-<p className="
-text-gray-400
+<div className="
+inline-flex
+w-fit
+rounded-full
+border
+border-cyan-400/20
+bg-cyan-500/10
+px-3
+py-1
 text-sm
-leading-6
+font-medium
+text-cyan-300
+">
+    {exp.company}
+</div>
+
+
+
+
+<p className="
+text-[15px]
+leading-7
 ">
 
 {exp.desc}
@@ -281,13 +293,12 @@ leading-6
 ))
 }
 
-
-
-
-
-
-
 </div>
+
+
+
+
+
 
 
 

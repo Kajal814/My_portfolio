@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Code2 } from "lucide-react";
 
 function Navbar() {
 
   const links = [
+    
     {name:"About", id:"about"},
     {name:"Skills", id:"skills"},
     {name:"Projects", id:"projects"},
@@ -55,20 +57,46 @@ function Navbar() {
         transition={{duration:0.2}}
         >
 
-        <h1 className="
-        text-2xl
-        font-bold
-        bg-gradient-to-r
-        from-purple-400
-        via-blue-400
-        to-cyan-300
-        bg-clip-text
-        text-transparent
-        ">
-
-        Kajal Yadav
-
-        </h1>
+       
+<div
+  className="
+    inline-flex
+    items-center
+    px-4
+    py-2
+    rounded-xl
+    border
+    border-cyan-400/20
+    backdrop-blur-sm
+    transition-all
+    duration-500
+    hover:border-cyan-400/60
+    hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]
+    hover:-translate-y-0.5
+  "
+>
+  <h1
+    className="
+      text-2xl
+      font-bold
+      bg-gradient-to-r
+      from-purple-400
+      via-blue-400
+      to-cyan-300
+      bg-clip-text
+      text-transparent
+      transition-all
+      duration-500
+      ease-out
+      hover:scale-105
+      hover:drop-shadow-[0_0_18px_rgba(59,130,246,0.6)]
+      hover:tracking-wide
+      cursor-pointer
+    "
+  >
+    Kajal Yadav
+  </h1>
+</div>
 
         </motion.div>
 
@@ -83,62 +111,56 @@ function Navbar() {
         <div className="
         hidden
         md:flex
-        gap-7
+        gap-5
         ">
 
 
         {
           links.map((link,index)=>(
 
-          <motion.a
+         <motion.a
+  key={index}
+  href={`#${link.id}`}
+  whileHover={{
+    y: -3,
+    scale: 1.05,
+  }}
+  transition={{ duration: 0.2 }}
+  className="
+    relative
+    group
+    px-3
+    py-2
+    text-[16px]
+    font-semibold
+    tracking-wide
+    text-gray-300
+    hover:text-white
+    transition-all
+    duration-300
+    cursor-pointer
+  "
+>
+  {link.name}
 
-          key={index}
-
-          href={`#${link.id}`}
-
-          whileHover={{
-            y:-3
-          }}
-
-          className="
-          text-gray-300
-          hover:text-white
-          transition
-          duration-300
-          relative
-          group
-          text-sm
-          font-medium
-          "
-
-          >
-
-
-          {link.name}
-
-
-
-
-          <span className="
-          absolute
-          left-0
-          -bottom-2
-          h-[2px]
-          w-0
-          rounded-full
-          bg-gradient-to-r
-          from-purple-500
-          to-blue-400
-          group-hover:w-full
-          transition-all
-          duration-300
-          ">
-
-
-          </span>
-
-
-          </motion.a>
+  <span
+    className="
+      absolute
+      left-0
+      -bottom-1
+      h-[2.5px]
+      w-0
+      rounded-full
+      bg-gradient-to-r
+      from-purple-500
+      via-blue-500
+      to-cyan-400
+      group-hover:w-full
+      transition-all
+      duration-300
+    "
+  ></span>
+</motion.a>
 
           ))
         }

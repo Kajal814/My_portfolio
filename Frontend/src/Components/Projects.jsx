@@ -3,31 +3,25 @@ import { motion } from "framer-motion";
 
 function Projects() {
 
-  const projects = [
-    {
-      title: "AI Chat Assistant",
-      desc: "A conversational AI assistant with smart responses and modern UI experience.",
-      tech: "React • Node • OpenAI • MongoDB",
-    },
+ const projects = [
+  {
+    title: "Interactive Portfolio",
+    desc: "A responsive MERN portfolio showcasing my skills, projects, and experience with smooth animations.",
+    tech: "React • Tailwind • Node.js • Express • MongoDB",
+  },
 
-    {
-      title: "Portfolio Website",
-      desc: "A responsive developer portfolio website with animations and clean design.",
-      tech: "React • Tailwind • Framer Motion",
-    },
+  {
+    title: "AI Chat Assistant",
+    desc: "An AI-powered chatbot that delivers intelligent responses through a clean and interactive interface.",
+    tech: "React • Node.js • OpenAI API • MongoDB",
+  },
 
-    {
-      title: "Algorithm Visualizer",
-      desc: "Interactive visualization tool for learning sorting algorithms.",
-      tech: "JavaScript • React • CSS",
-    },
-
-    {
-      title: "MERN Dashboard",
-      desc: "Full stack dashboard application with authentication and CRUD features.",
-      tech: "MongoDB • Express • React • Node",
-    },
-  ];
+  {
+    title: "TrackMindz",
+    desc: "A student learning tracker to manage goals, monitor progress, and organize study activities.",
+    tech: "Python • Django • MySQL • Chart.js",
+  },
+];
 
 
   return (
@@ -68,18 +62,34 @@ function Projects() {
 
         className="flex flex-col gap-3">
 
-          <h2 className="
-          text-white 
-          font-bold 
-          text-3xl
-          ">
-            Projects
-          </h2>
+         <h2
+className="
+text-3xl
+md:text-4xl
+font-bold
+text-white
+relative
+inline-block
+pb-2
+after:absolute
+after:left-0
+after:bottom-0
+after:h-[3px]
+after:w-14
+after:rounded-full
+after:bg-gradient-to-r
+after:from-purple-500
+after:to-cyan-400
+"
+>
+Projects
+</h2>
 
 
-          <p className="text-gray-400">
-            Selected projects — hover for details and quick links.
-          </p>
+        <p className="mt-2 max-w-2xl text-lg leading-8 text-gray-400">
+  Turning ideas into scalable digital experiences through full-stack
+  development, intelligent applications, and modern design principles.
+</p>
 
         </motion.div>
 
@@ -134,8 +144,11 @@ function Projects() {
 
 
           className="
-          rounded-2xl
-          bg-white/5
+          group
+relative
+overflow-hidden
+rounded-3xl
+bg-white/[0.04]
           border
           border-white/10
           backdrop-blur-xl
@@ -143,6 +156,10 @@ function Projects() {
           p-5
           flex
           gap-5
+          transition-all
+duration-500
+hover:border-cyan-400/30
+hover:shadow-cyan-500/10
           "
 
 
@@ -154,41 +171,46 @@ function Projects() {
           {/* image box */}
 
 
-          <motion.div
+         <motion.div
+animate={{ y: [0, -6, 0] }}
+transition={{
+  duration: 3,
+  repeat: Infinity,
+}}
+className="
+h-40
+w-40
+rounded-2xl
+bg-gradient-to-br
+from-slate-900
+via-[#0f172a]
+to-[#111827]
+border
+border-white/10
+overflow-hidden
+shadow-lg
+"
+>
 
-          animate={{
-            y:[0,-8,0]
-          }}
+  {/* Browser Header */}
+  <div className="flex items-center gap-1 px-3 py-2 border-b border-white/10">
+    <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+    <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+  </div>
 
-          transition={{
-            duration:3,
-            repeat:Infinity
-          }}
+  {/* Preview */}
+  <div className="flex flex-col justify-center items-center h-full">
+      <div className="w-16 h-2 rounded-full bg-cyan-400 mb-3"></div>
 
-          className="
-          h-40
-          w-40
-          rounded-xl
-          bg-gradient-to-b
-          from-indigo-700/50
-          via-blue-900/70
-          to-black
-          flex
-          items-center
-          justify-center
-          text-white
-          text-4xl
-          font-bold
-          shadow-lg
-          "
+      <div className="space-y-2">
+          <div className="w-20 h-2 rounded-full bg-white/20"></div>
+          <div className="w-14 h-2 rounded-full bg-white/10"></div>
+          <div className="w-24 h-2 rounded-full bg-white/20"></div>
+      </div>
+  </div>
 
-          >
-
-
-          {project.title[0]}
-
-
-          </motion.div>
+</motion.div>
 
 
 
@@ -204,11 +226,11 @@ function Projects() {
           ">
 
 
-          <h3 className="
-          text-white
-          text-xl
-          font-bold
-          ">
+         <h3 className="
+text-2xl
+font-semibold
+text-white
+">
 
           {project.title}
 
@@ -217,10 +239,11 @@ function Projects() {
 
 
 
-          <p className="
-          text-gray-400
-          text-sm
-          ">
+         <p className="
+text-gray-400
+leading-7
+text-[15px]
+">
 
           {project.desc}
 
@@ -230,14 +253,22 @@ function Projects() {
 
 
 
-          <p className="
-          text-blue-300
-          text-sm
-          ">
-
+         <div className="
+inline-flex
+w-fit
+rounded-full
+border
+border-cyan-400/20
+bg-cyan-500/10
+px-3
+py-1
+text-xs
+font-medium
+text-cyan-300
+">
           {project.tech}
 
-          </p>
+          </div>
 
 
 
@@ -248,50 +279,33 @@ function Projects() {
 
 
 
-          <motion.button
-
-          whileHover={{
-            scale:1.08
-          }}
-
-          className="
-          px-4
-          py-2
-          rounded-lg
-          bg-gradient-to-r
-          from-purple-500
-          to-blue-500
-          text-white
-          text-sm
-          ">
-
-          Live Demo
-
-          </motion.button>
-
-
-
-
-
-          <motion.button
-
-          whileHover={{
-            scale:1.08
-          }}
-
-          className="
-          px-4
-          py-2
-          rounded-lg
-          border
-          border-white/20
-          text-gray-300
-          text-sm
-          ">
-
-          GitHub
-
-          </motion.button>
+          <motion.a
+href="#"
+target="_blank"
+whileHover={{
+scale:1.05
+}}
+className="
+inline-flex
+items-center
+justify-center
+gap-2
+px-4
+py-2
+rounded-xl
+border
+border-white/10
+bg-white/5
+text-white
+font-medium
+transition-all
+duration-300
+hover:border-cyan-400/30
+hover:bg-cyan-500/10
+"
+>
+GitHub →
+</motion.a>
 
 
 
