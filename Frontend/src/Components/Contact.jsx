@@ -22,7 +22,7 @@ function Contact() {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/contacts", {
+      const response = await axios.post("http://localhost:4000/api/contacts", {
         name,
         email,
         message,
@@ -444,9 +444,10 @@ hover:-translate-y-1
               />
             </a>
             <a
-              href="mailto:ky7246204@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=ky7246204@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+
               className="
 group
 h-12

@@ -165,28 +165,19 @@ hover:shadow-cyan-500/20
   "
 ></div>
 
-<h3 className="
-relative
-text-xl
-font-semibold
-mb-5
-">
-            {skill.title}
-          </h3>
+<h3 className="relative text-xl font-semibold mb-5">
+  {skill.title}
+</h3>
 
 
 
           {
-            skill.items.map((item,i)=>(
+  skill.items.map((item) => (
 
-
- <h3 className="
-relative
-text-xl
-font-semibold
-mb-5
-">
-
+<div
+  key={item[0]}
+  className="mb-5"
+>
 
                 <div className="
                 flex
@@ -246,7 +237,7 @@ shadow-[0_0_15px_rgba(34,211,238,0.5)]
 
 
 
-              </h3>
+          </div>
 
 
             ))
