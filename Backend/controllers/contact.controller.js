@@ -5,7 +5,7 @@ export const createContact = async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-    console.log("Step 1");
+   
 
     const newContact = await Contact.create({
       name,
@@ -13,12 +13,12 @@ export const createContact = async (req, res) => {
       message,
     });
 
-    console.log("Step 2: MongoDB Saved");
 
-    // Comment this line temporarily
-    // await sendEmail(name, email, message);
 
-    console.log("Step 3");
+ 
+     await sendEmail(name, email, message);
+
+ 
 
     res.status(201).json({
       success: true,

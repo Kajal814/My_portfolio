@@ -22,7 +22,7 @@ createRoot(document.getElementById('root')).render(
   />
 
      <Navbar /> 
-    <Hero_section />
+  <Hero_section />
  <About/> 
    <Skill/>
     <Experience/> 
@@ -30,7 +30,7 @@ createRoot(document.getElementById('root')).render(
     
     <Certificates/>  
    <Contact/>
-   <Footer/>
+   <Footer/> 
    
   </StrictMode>,
 )
