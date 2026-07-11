@@ -5,29 +5,23 @@ export const createContact = async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-   
-
     const newContact = await Contact.create({
       name,
       email,
       message,
     });
 
-
-
- 
-     await sendEmail(name, email, message);
-
- 
-
+    // Respond immediately
     res.status(201).json({
-  success: true,
-  message: "Saved successfully",
-});
+      success: true,
+      message: "Saved successfully",
+      data: newContact,
+    });
 
-sendEmail(name, email, message).catch((err) => {
-  console.error("Email failed:", err);
-});
+    // Send email in the background
+    sendEmail(name, email, message).catch((err) => {
+      console.error("Email failed:", err);
+    });
 
   } catch (error) {
     console.error(error);
