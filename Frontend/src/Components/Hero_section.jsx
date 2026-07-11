@@ -59,18 +59,22 @@ function Hero() {
   return (
     <motion.div
 
-      className="
-      relative
-      flex
-      gap-12
-      h-screen
-      bg-gradient-to-br
-      from-[#020617]
-      via-[#0b1120]
-      to-[#111827]
-      scroll-smooth
-      overflow-hidden
-      "
+     className="
+relative
+flex
+flex-col
+lg:flex-row
+gap-10
+min-h-screen
+pt-24
+px-6
+lg:px-16
+bg-gradient-to-br
+from-[#020617]
+via-[#0b1120]
+to-[#111827]
+overflow-hidden
+"
 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -111,7 +115,14 @@ blur-[150px]
 
       <motion.div
 
-        className="w-[50%] flex justify-end items-center mr-6"
+        className="
+w-full
+lg:w-1/2
+flex
+justify-center
+lg:justify-end
+items-center
+"
 
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -147,7 +158,8 @@ Final Year Tech Student
           <motion.h1
 
    className="
-text-6xl
+text-4xl
+sm:text-5xl
 lg:text-7xl
 leading-tight
 tracking-tight
@@ -179,7 +191,8 @@ hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.4)]
 
             className="
             text-blue-300
-            text-xl
+           text-lg
+sm:text-xl
             font-bold
             flex
             items-center
@@ -203,7 +216,7 @@ rounded-full
 
           </motion.p>
 
-          <div className="flex gap-4 mt-3">
+         <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
 
             <motion.button
 
@@ -216,6 +229,7 @@ rounded-full
               }}
 
               className="
+              w-full sm:w-auto
               bg-gradient-to-r
               from-purple-500/80
               via-indigo-500/70
@@ -245,6 +259,7 @@ duration-300
               }}
 
               className="
+              w-full sm:w-auto
               text-gray-400
               px-6
               py-2
@@ -274,16 +289,17 @@ hover:border-cyan-400/30
       {/* RIGHT SECTION */}
 
       <motion.div
-
-        className="
-        relative
-        w-[60%]
-        flex
-        gap-6
-        flex-col
-        justify-center
-        pl-2 
-        "
+className="
+relative
+w-full
+lg:w-1/2
+flex
+flex-col
+gap-6
+justify-center
+items-center
+lg:items-start
+"
 
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -366,13 +382,15 @@ blur-[100px]
 
         </motion.div >
 
-        <h2 className="text-white font-bold text-2xl">
+        <h2 className="text-white font-bold text-xl sm:text-2xl text-center lg:text-left">
         Transforming Ideas Into Digital Experiences
         </h2>
 
         <p
 className="
 max-w-lg
+text-center
+lg:text-left
 text-gray-400
 leading-8
 text-base
@@ -382,7 +400,7 @@ Full-stack developer passionate about building scalable web applications, solvin
 
         </p>
 
-        <div className="flex gap-3 text-gray-200 font-bold">
+        <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-gray-200 font-bold">
 
           <motion.div
             whileHover={{ scale: 1.08, y: -4 }}

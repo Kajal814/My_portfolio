@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Code2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 function Navbar() {
 
@@ -13,7 +13,7 @@ function Navbar() {
     {name:"Certificates", id:"certifications"},
     {name:"Contact", id:"contact"},
   ];
-
+const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
 
@@ -38,17 +38,18 @@ function Navbar() {
 
     >
 
-
-      <div className="
-      flex
-      h-20
-      text-white
-      px-8
-      md:px-14
-      items-center
-      justify-between
-      ">
-
+<div
+  className="
+    flex
+    h-20
+    items-center
+    justify-between
+    px-4
+    sm:px-6
+    md:px-14
+    text-white
+  "
+>
 
         {/* Logo */}
 
@@ -77,7 +78,9 @@ function Navbar() {
 >
   <h1
     className="
-      text-2xl
+        text-lg
+      sm:text-xl
+      md:text-2xl
       font-bold
       bg-gradient-to-r
       from-purple-400
@@ -167,10 +170,29 @@ function Navbar() {
 
 
         </div>
-
+        <div className="md:hidden">
+  <button onClick={() => setMenuOpen(!menuOpen)}>
+    {menuOpen ? <X size={28} /> : <Menu size={28} />}
+  </button>
+</div>
 
 
       </div>
+
+{menuOpen && (
+  <div className="md:hidden bg-[#020617]/95 backdrop-blur-xl">
+    {links.map((link, index) => (
+      <a
+        key={index}
+        href={`#${link.id}`}
+        onClick={() => setMenuOpen(false)}
+        className="block px-6 py-4 border-b border-white/10 text-white hover:bg-cyan-500/10"
+      >
+        {link.name}
+      </a>
+    ))}
+  </div>
+)}
 
 
     </motion.div>
