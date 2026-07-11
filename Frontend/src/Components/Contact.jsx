@@ -447,7 +447,7 @@ hover:-translate-y-1
               />
             </a>
             <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=ky7246204@gmail.com"
+  href="mailto:ky7246204@gmail.com"
   target="_blank"
   rel="noopener noreferrer"
 
