@@ -9,9 +9,7 @@ export const sendEmail = async (name, email, message) => {
     },
   });
 
-  // Optional: verify before sending
-  await transporter.verify();
-  console.log("SMTP Server is ready");
+  
 
   await transporter.sendMail({
     from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
