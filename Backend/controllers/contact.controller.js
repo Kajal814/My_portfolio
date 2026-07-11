@@ -21,10 +21,13 @@ export const createContact = async (req, res) => {
  
 
     res.status(201).json({
-      success: true,
-      message: "Saved successfully",
-      data: newContact,
-    });
+  success: true,
+  message: "Saved successfully",
+});
+
+sendEmail(name, email, message).catch((err) => {
+  console.error("Email failed:", err);
+});
 
   } catch (error) {
     console.error(error);
